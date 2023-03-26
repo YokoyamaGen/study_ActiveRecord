@@ -22,4 +22,4 @@ https://www.tech-essentials.work/courses/50/tasks/28
   - Employee.joins(:titles).merge(Title.where("title = ? AND from_date >= ?", "Technique Leader", "2000-01-29"))
   
 - 部署番号がd001である部署のマネージャー歴代一覧を取得してきてください
-  
+  - Employee.where(emp_no:DeptManager.where(dept_no: 'd001').pluck(:emp_no))
